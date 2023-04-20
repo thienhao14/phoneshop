@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.phoneshop.model.Product;
 import com.example.phoneshop.service.ProductService;
@@ -55,7 +56,6 @@ public class HomeController {
 	
 	@GetMapping("/admin/admin-add-product")
 	public String addProductPage() {
-		
 		return "admin/admin-addProduct";
 	}
 	
@@ -75,6 +75,11 @@ public class HomeController {
 		productService.save(product);
 		
 		return "admin/admin-productManagement";
+	}
+	
+	@GetMapping("/admin/admin-edit-product/{id}")
+	public String editProductPage() {
+		return "admin/admin-editProduct";
 	}
 	
 }

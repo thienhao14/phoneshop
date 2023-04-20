@@ -106,7 +106,7 @@
 
 								<td class="text-center text-nowrap"><a
 									class="btn btn-primary me-2" href="#" role="button">Xem</a> <a
-									class="btn btn-success me-2" href="#" role="button">Sửa</a> <a
+									class="btn btn-success me-2" href="/admin/admin-edit-product/${product.id}" role="button">Sửa</a> <a
 									class="btn btn-danger"data-method="DELETE" href="/admin/product/${product.id}" role="button">Xóa</a></td>
 							</tr>
 						</c:forEach>

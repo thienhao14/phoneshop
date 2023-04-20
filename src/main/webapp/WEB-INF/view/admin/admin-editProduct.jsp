@@ -68,30 +68,30 @@
         <h3 class="section-title">Thêm sản phẩm</h3>
       </header> <!-- section-heading.// -->
       <main class="add-book-form mb-5">
-        <form class="w-50">
+        <form action="/admin/admin-add-product" th:object="${product}" method="post" class="w-50">
           <div class="mb-3">
             <label for="add-book-title" class="form-label">Tên sản phẩm</label>
-            <input type="text" class="form-control" id="add-book-title">
+            <input type="text" class="form-control" id="add-book-title" name="name">
           </div>
           <div class="mb-3">
             <label for="add-book-author" class="form-label">Thương hiệu</label>
-            <input type="text" class="form-control" id="add-book-author">
+            <input type="text" class="form-control" id="add-book-author" name="brand">
           </div>
           <div class="mb-3">
             <label for="add-book-pages" class="form-label">Giá</label>
-            <input type="number" class="form-control" id="add-book-pages">
+            <input type="number" class="form-control" id="add-book-pages" name="price">
           </div>
           <div class="mb-3">
             <label for="add-book-publisher" class="form-label">Khuyến mãi</label>
-            <input type="text" class="form-control" id="add-book-publisher">
+            <input type="text" class="form-control" id="add-book-publisher" name="discount">
           </div>
           <div class="mb-3">
             <label for="add-book-description" class="form-label">Mô tả</label>
-            <textarea class="form-control" id="add-book-description" rows="5"></textarea>
+            <textarea class="form-control" id="add-book-description" rows="5" name="description"></textarea>
           </div>
           <div class="mb-3">
             <label for="add-book-category" class="form-label">Số lượng</label>
-            <input type="text" class="form-control" id="add-book-category">
+            <input type="text" class="form-control" id="add-book-category" name="quantity">
           </div>
           
           <div class="mb-3">
