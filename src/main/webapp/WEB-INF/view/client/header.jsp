@@ -8,7 +8,7 @@
         <div class="row align-items-center">
           <div class="col-lg-3 py-3">
             <a class="text-body" href="./home.html">
-              <h3>Shop Bán Sách</h3>
+              <h3>Phone Shop</h3>
             </a>
           </div> <!-- col.// -->
           <div class="col-lg-4 col-xl-5">
@@ -30,7 +30,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link text-body">
+                <a href="/order" class="nav-link text-body">
                   <i class="bi bi-list-check d-block text-center fs-3"></i>
                   Đơn hàng
                 </a>

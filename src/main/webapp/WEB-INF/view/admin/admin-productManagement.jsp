@@ -70,7 +70,7 @@
 		<div class="container">
 			<header class="section-heading py-4 d-flex justify-content-between">
 				<h3 class="section-title">Quản lý sản phẩm</h3>
-				<a class="btn btn-primary" href="#" role="button"
+				<a class="btn btn-primary" href="/admin/admin-add-product" role="button"
 					style="height: fit-content;">Thêm sản phẩm</a>
 			</header>
 			<!-- section-heading.// -->
@@ -107,7 +107,7 @@
 								<td class="text-center text-nowrap"><a
 									class="btn btn-primary me-2" href="#" role="button">Xem</a> <a
 									class="btn btn-success me-2" href="#" role="button">Sửa</a> <a
-									class="btn btn-danger" href="#" role="button">Xóa</a></td>
+									class="btn btn-danger"data-method="DELETE" href="/admin/product/${product.id}" role="button">Xóa</a></td>
 							</tr>
 						</c:forEach>
 

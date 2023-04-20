@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <title>Trang chủ</title>
-<jsp:include page="common.jsp"></jsp:include>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="common.jsp"></jsp:include><jsp:include
+	page="header.jsp"></jsp:include>
 
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
@@ -56,11 +56,13 @@
 				<c:forEach items="${products}" var="product">
 					<div class="col-lg-3 col-md-6">
 						<div class="card p-3 mb-4">
-							<a href="#" class="img-wrap text-center"> <img
-								class="img-fluid" src="img/200px.png">
+							<a href="/user/product/product-detail/${product.id}"
+								class="img-wrap text-center"> <img class="img-fluid"
+								src="img/200px.png">
 							</a>
 							<figcaption class="info-wrap mt-2">
-								<a href="#" class="title">${product.name}</a>
+								<a href="/user/product/product-detail/${product.id}"
+									class="title">${product.name}</a>
 								<div class="price mt-1 fw-bold">${product.price}</div>
 							</figcaption>
 						</div>

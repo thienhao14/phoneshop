@@ -54,6 +54,8 @@ public class UserController {
 		return "client/home-brand";
 	}
 	
+	
+	
 	@PostMapping("/home")
 	public String login(LoginModel loginModel, Model model, HttpSession session) {
 		User user = userService.checkLogin(new User(loginModel.getUsername(), loginModel.getPassword()));
