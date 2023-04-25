@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="vi">
-<title>Admin User Management</title>
+<title>Admin Add User</title>
 <jsp:include page="common.jsp"></jsp:include>
 
 <body>
@@ -42,13 +42,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/user"><i class="bi bi-people"></i> Quản lý người dùng</a>
+            <a class="nav-link" href="#"><i class="bi bi-people"></i> Quản lý người dùng</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thể loại</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/product"><i class="bi bi-book"></i> Quản lý sản phẩm</a>
+            <a class="nav-link active" href="#"><i class="bi bi-book"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-cart"></i> Quản lý giỏ hàng</a>
@@ -57,7 +57,7 @@
             <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
-      
+
       </div>
     </div> <!-- container.// -->
   </nav> <!-- navbar-main.// -->
@@ -65,54 +65,33 @@
   <section class="section-content">
     <div class="container">
       <header class="section-heading py-4 d-flex justify-content-between">
-        <h3 class="section-title">Quản lý người dùng</h3>
-        <a class="btn btn-primary" href="/admin/admin-add-user" role="button" style="height: fit-content;">Thêm người dùng</a>
+        <h3 class="section-title">Thêm sản phẩm</h3>
       </header> <!-- section-heading.// -->
-      <main class="table-responsive-xl mb-5">
-        <table class="table table-bordered table-striped table-hover align-middle">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">ID</th>
-              <th scope="col">Tên đăng nhập</th>
-              <th scope="col">Email</th>
-              <th scope="col">Trạng thái</th>
-              <th scope="col">Quyền</th>
-              <th scope="col">Ngày tạo</th>
-              <th scope="col">Thao tác</th>
-            </tr>
-          </thead>
-          <tbody>
-          <c:forEach items="${users}" var="user">
-            <tr>
-              <th scope="row">1</th>
-              <td>${user.id}</td>
-              <td>${user.username}</td>
-              <td>${user.email}</td>
-              <td>${user.activeFlag}</td>
-              <td>Quyền</td>
-              <td>${user.createDate}</td>
-             
-              <td class="text-center text-nowrap">
-                <a class="btn btn-primary me-2" href="#" role="button">Xem</a>
-                <a class="btn btn-success me-2" href="/admin/admin-edit-user/${user.id}" role="button">Sửa</a>
-                <a class="btn btn-danger" href="/admin/user/${user.id}" role="button">Xóa</a>
-              </td>
-            </tr>
-           </c:forEach> 
-           
-          </tbody>
-        </table>
-      </main> <!-- book-manager-table.// -->
-      <nav class="mt-3 mb-5">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled"><a class="page-link" href="#">Trang trước</a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Trang sau</a></li>
-        </ul>
-      </nav>
+      <main class="add-book-form mb-5">
+        <form action="/admin/admin-add-product" th:object="${user}" method="post" class="w-50">
+          <div class="mb-3">
+            <label for="add-user-name" class="form-label">User name</label>
+            <input type="text" class="form-control" id="add-user-name" name="username">
+          </div>
+          <div class="mb-3">
+            <label for="add-user-email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="add-user-email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="add-user-password" class="form-label">Password</label>
+            <input type="text" class="form-control" id="add-user-password" name="password">
+          </div>
+          <div class="mb-3">
+            <label for="add-user-activeFlag" class="form-label">Trạng thái</label>
+            <input type="text" class="form-control" id="add-user-activeFlag" name="activeFlag">
+          </div>
+          
+        
+          <button type="submit" class="btn btn-primary">Thêm người dùng</button>
+          <button type="reset" class="btn btn-warning ms-2">Tẩy trống</button>
+          <button type="button" class="btn btn-light ms-2">Hủy</button>
+        </form>
+      </main> <!-- add-book-form.// -->
     </div> <!-- container.// -->
   </section> <!-- section-content.// -->
 

@@ -10,15 +10,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.phoneshop.model.Product;
+import com.example.phoneshop.model.User;
 import com.example.phoneshop.service.ProductService;
+import com.example.phoneshop.service.UserService;
 @Controller
 public class HomeController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private UserService userService;
+	
 	@GetMapping("/admin/signin")
 	public String signin() {
 		return "admin/admin-signin";
@@ -41,11 +46,6 @@ public class HomeController {
 		return "admin/admin-addProduct";
 	}
 	
-	@GetMapping("/admin/userManagement")
-	public String adminUser() {
-		return "admin/admin-userManagement";
-	}
-	
 	@GetMapping("/admin/product/{id}")
 	public String deleteProduct(@PathVariable int id, Model model) {
 		productService.delete(id);
@@ -62,7 +62,7 @@ public class HomeController {
 	@PostMapping("/admin/admin-add-product")
 	public String addProduct(Product product, Model model) {
 		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-		System.out.print(product);
+//		System.out.print(product);
 		// cần update 
 		
 		product.setBrandId(1);
@@ -82,4 +82,44 @@ public class HomeController {
 		return "admin/admin-editProduct";
 	}
 	
+	@PostMapping("/admin/admin-edit-product/{id}")
+	public String editProduct(@PathVariable int id,Product product, Model model) {
+		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+//		System.out.print(product);
+		// cần update 
+		productService.delete(id);
+		product.setBrandId(1);
+		product.setCategoryId(1);
+		product.setCode("iphone");
+		product.setActiveFlag(1);
+		product.setCreateDate(currentDate);
+		product.setUpdateDate(currentDate);
+		
+		productService.save(product);
+		List<Product> products = productService.get();
+		model.addAttribute("products", products);
+		return "admin/admin-productManagement";
+	}
+	
+	@GetMapping("/admin/user")
+	public String adminUser(Model model) {
+		List<User> users = userService.get();
+		model.addAttribute("users", users);
+		return "admin/admin-userManagement";
+	}
+	
+	@GetMapping("/admin/add-user")
+	public String adminAddUser() {
+		return "admin/admin-addUser";
+	}
+	
+	@GetMapping("/admin/admin-add-user")
+	public String addUserPage() {
+		return "admin/admin-addUser";
+	}
+	
+	@GetMapping("/admin/admin-edit-user")
+	public String editUserPage() {
+		return "admin/admin-editUser";
+	}
 }

@@ -30,7 +30,7 @@ public class User {
 	@Column(name="createdate")
 	private Date createDate;
 	@Column(name="updatedate")
-	private Date updatedate;
+	private Date updateDate;
 	
 	public User(String username, String password) {
 		super();
@@ -57,7 +57,7 @@ public class User {
 
 
 	public User(Integer id, String username, String password, String email, String name, Integer activeFlag,
-			Date createDate, Date updatedate) {
+			Date createDate, Date updateDate) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -66,7 +66,7 @@ public class User {
 		this.name = name;
 		this.activeFlag = activeFlag;
 		this.createDate = createDate;
-		this.updatedate = updatedate;
+		this.updateDate = updateDate;
 	}
 	
 	public User() {
@@ -116,15 +116,15 @@ public class User {
 		this.createDate = createDate;
 	}
 	public Date getUpdatedate() {
-		return updatedate;
+		return updateDate;
 	}
 	public void setUpdatedate(Date updatedate) {
-		this.updatedate = updatedate;
+		this.updateDate = updatedate;
 	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", name="
-				+ name + ", activeFlag=" + activeFlag + ", createDate=" + createDate + ", updatedate=" + updatedate
+				+ name + ", activeFlag=" + activeFlag + ", createDate=" + createDate + ", updateDate=" + updateDate
 				+ "]";
 	}
 	

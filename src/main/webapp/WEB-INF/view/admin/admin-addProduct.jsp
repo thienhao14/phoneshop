@@ -70,33 +70,33 @@
       <main class="add-book-form mb-5">
         <form action="/admin/admin-add-product" th:object="${product}" method="post" class="w-50">
           <div class="mb-3">
-            <label for="add-book-title" class="form-label">Tên sản phẩm</label>
-            <input type="text" class="form-control" id="add-book-title" name="name">
+            <label for="add-product-title" class="form-label">Tên sản phẩm</label>
+            <input type="text" class="form-control" id="add-product-title" name="name">
           </div>
           <div class="mb-3">
-            <label for="add-book-author" class="form-label">Thương hiệu</label>
-            <input type="text" class="form-control" id="add-book-author" name="brand">
+            <label for="add-product-brand" class="form-label">Thương hiệu</label>
+            <input type="text" class="form-control" id="add-product-brand" name="brand">
           </div>
           <div class="mb-3">
-            <label for="add-book-pages" class="form-label">Giá</label>
-            <input type="number" class="form-control" id="add-book-pages" name="price">
+            <label for="add-product-price" class="form-label">Giá</label>
+            <input type="number" class="form-control" id="add-product-price" name="price">
           </div>
           <div class="mb-3">
-            <label for="add-book-publisher" class="form-label">Khuyến mãi</label>
-            <input type="text" class="form-control" id="add-book-publisher" name="discount">
+            <label for="add-product-discount" class="form-label">Khuyến mãi</label>
+            <input type="text" class="form-control" id="add-product-discount" name="discount">
           </div>
           <div class="mb-3">
-            <label for="add-book-description" class="form-label">Mô tả</label>
-            <textarea class="form-control" id="add-book-description" rows="5" name="description"></textarea>
+            <label for="add-product-description" class="form-label">Mô tả</label>
+            <textarea class="form-control" id="add-product-description" rows="5" name="description"></textarea>
           </div>
           <div class="mb-3">
-            <label for="add-book-category" class="form-label">Số lượng</label>
-            <input type="text" class="form-control" id="add-book-category" name="quantity">
+            <label for="add-product-quantity" class="form-label">Số lượng</label>
+            <input type="text" class="form-control" id="add-product-quantity" name="quantity">
           </div>
           
           <div class="mb-3">
-            <label for="add-book-imageName" class="form-label">Hình</label>
-            <input type="file" class="form-control" id="add-book-imageName" name="image">
+            <label for="add-product-image" class="form-label">Hình</label>
+            <input type="file" class="form-control" id="add-product-image" name="image">
           </div>
           <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
           <button type="reset" class="btn btn-warning ms-2">Tẩy trống</button>
