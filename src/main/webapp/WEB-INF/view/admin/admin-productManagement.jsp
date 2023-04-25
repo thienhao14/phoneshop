@@ -79,7 +79,7 @@
 					class="table table-bordered table-striped table-hover align-middle">
 					<thead>
 						<tr>
-							<th scope="col">#</th>
+							<th scope="row" >#</th>
 							<th scope="col">ID</th>
 							<th scope="col">Tên sản phẩm</th>
 							<th scope="col">Thương hiệu</th>
@@ -92,9 +92,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${products}" var="product">
+						<c:forEach items="${products}" var="product" varStatus="status">
 							<tr>
-								<th scope="row">1</th>
+								<th scope="row" >${status.count}</th>
 								<td>${product.id}</td>
 								<td>${product.name}</td>
 								<td>product.brand</td>

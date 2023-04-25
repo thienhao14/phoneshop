@@ -83,9 +83,9 @@
             </tr>
           </thead>
           <tbody>
-          <c:forEach items="${users}" var="user">
+          <c:forEach items="${users}" var="user" varStatus="status">
             <tr>
-              <th scope="row">1</th>
+              <th scope="row" >${status.count}</th>
               <td>${user.id}</td>
               <td>${user.username}</td>
               <td>${user.email}</td>

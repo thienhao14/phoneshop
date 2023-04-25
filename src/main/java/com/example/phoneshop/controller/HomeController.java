@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.phoneshop.model.Product;
 import com.example.phoneshop.model.User;
@@ -78,16 +79,19 @@ public class HomeController {
 	}
 	
 	@GetMapping("/admin/admin-edit-product/{id}")
-	public String editProductPage() {
+	public String editProductPage(@PathVariable int id, Model model) {
+		Product product = productService.get(id);
+		model.addAttribute("product", product);
 		return "admin/admin-editProduct";
+
 	}
 	
-	@PostMapping("/admin/admin-edit-product/{id}")
-	public String editProduct(@PathVariable int id,Product product, Model model) {
+		
+	@PostMapping("/admin/admin-edit-product-data")
+	public String editProduct(Product product, Model model) {
 		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-//		System.out.print(product);
 		// cần update 
-		productService.delete(id);
+		product.setId(product.getId());
 		product.setBrandId(1);
 		product.setCategoryId(1);
 		product.setCode("iphone");
@@ -118,8 +122,34 @@ public class HomeController {
 		return "admin/admin-addUser";
 	}
 	
-	@GetMapping("/admin/admin-edit-user")
-	public String editUserPage() {
+	@GetMapping("/admin/admin-edit-user/{id}")
+	public String editUserPage(@PathVariable int id, Model model) {
+		User user = userService.get(id);
+		model.addAttribute("user", user);
 		return "admin/admin-editUser";
+	}
+	
+	@GetMapping("/admin/user/{id}")
+	public String deleteUser(@PathVariable int id, Model model) {
+		userService.delete(id);
+		List<User> users = userService.get();
+		model.addAttribute("users", users);
+		return "admin/admin-userManagement";
+	}
+	
+	@PostMapping("/admin/admin-edit-user-data")
+	public String editUser(User user, Model model) {
+		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+//		User user2 = userService.get(user.getId());	
+		user.setId(user.getId());
+		user.setName(user.getUsername());
+		user.setActiveFlag(user.getActiveFlag());
+		user.setCreateDate(currentDate);
+ 		user.setUpdatedate(currentDate);
+		
+		userService.save(user);
+		List<User> users = userService.get();
+		model.addAttribute("users", users);
+		return "admin/admin-userManagement";
 	}
 }

@@ -65,40 +65,41 @@
   <section class="section-content">
     <div class="container">
       <header class="section-heading py-4 d-flex justify-content-between">
-        <h3 class="section-title">Thêm sản phẩm</h3>
+        <h3 class="section-title">Sửa sản phẩm</h3>
       </header> <!-- section-heading.// -->
       <main class="add-book-form mb-5">
-        <form action="/admin/admin-add-product" th:object="${product}" method="post" class="w-50">
+        <form action="/admin/admin-edit-product-data" th:object="${product}" method="POST" class="w-50">
+            <input type="hidden" class="form-control" id="add-book-title" name="id" value="${product.id}">
           <div class="mb-3">
             <label for="add-book-title" class="form-label">Tên sản phẩm</label>
-            <input type="text" class="form-control" id="add-book-title" name="name">
+            <input type="text" class="form-control" id="add-book-title" name="name" value="${product.name}">
           </div>
           <div class="mb-3">
             <label for="add-book-author" class="form-label">Thương hiệu</label>
-            <input type="text" class="form-control" id="add-book-author" name="brand">
+            <input type="text" class="form-control" id="add-book-author" name="brand" value="${product.name}">
           </div>
           <div class="mb-3">
             <label for="add-book-pages" class="form-label">Giá</label>
-            <input type="number" class="form-control" id="add-book-pages" name="price">
+            <input type="number" class="form-control" id="add-book-pages" name="price" value="${product.price}">
           </div>
           <div class="mb-3">
             <label for="add-book-publisher" class="form-label">Khuyến mãi</label>
-            <input type="text" class="form-control" id="add-book-publisher" name="discount">
+            <input type="text" class="form-control" id="add-book-publisher" name="discount" value="${product.discount}">
           </div>
           <div class="mb-3">
             <label for="add-book-description" class="form-label">Mô tả</label>
-            <textarea class="form-control" id="add-book-description" rows="5" name="description"></textarea>
+            <textarea class="form-control" id="add-book-description" rows="5" name="description" >${product.description}</textarea>
           </div>
           <div class="mb-3">
             <label for="add-book-category" class="form-label">Số lượng</label>
-            <input type="text" class="form-control" id="add-book-category" name="quantity">
+            <input type="text" class="form-control" id="add-book-category" name="quantity" value="${product.quantity}">
           </div>
           
           <div class="mb-3">
             <label for="add-book-imageName" class="form-label">Hình</label>
             <input type="file" class="form-control" id="add-book-imageName" name="image">
           </div>
-          <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+          <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
           <button type="reset" class="btn btn-warning ms-2">Tẩy trống</button>
           <button type="button" class="btn btn-light ms-2">Hủy</button>
         </form>
