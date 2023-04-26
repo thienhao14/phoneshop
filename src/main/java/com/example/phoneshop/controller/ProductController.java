@@ -17,19 +17,17 @@ import com.example.phoneshop.service.ProductService;
 public class ProductController {
 	@Autowired
 	private ProductService productService;
-	
+
 	@GetMapping("")
-	public List<Product> get(){
+	public List<Product> get() {
 		return productService.get();
 	}
-	
+
 	@GetMapping("/product-detail/{id}")
 	public String productDetail(@PathVariable int id, Model model) {
 		Product product = productService.get(id);
 		model.addAttribute("product", product);
 		return "client/productDetail";
 	}
-	
-	
-	
+
 }

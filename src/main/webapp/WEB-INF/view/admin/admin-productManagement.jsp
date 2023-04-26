@@ -55,7 +55,7 @@
             <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
+            <a class="nav-link" href="/admin/order"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
       </div>

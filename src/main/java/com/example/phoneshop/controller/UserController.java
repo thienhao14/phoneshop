@@ -31,31 +31,29 @@ import com.example.phoneshop.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@Autowired
 	private BrandService brandService;
-	
+
 	@Autowired
 	private ProductService productService;
-	
+
 	@PostMapping("")
 	public User save(@RequestBody User userObj) {
 		userService.save(userObj);
 		return userObj;
 	}
-	
+
 	@GetMapping("/home-brand")
 	public String getBrand(Model model) {
 		List<Brand> brands = brandService.get();
 		model.addAttribute("brands", brands);
 		return "client/home-brand";
 	}
-	
-	
-	
+
 	@PostMapping("/home")
 	public String login(LoginModel loginModel, Model model, HttpSession session) {
 		User user = userService.checkLogin(new User(loginModel.getUsername(), loginModel.getPassword()));
@@ -63,77 +61,75 @@ public class UserController {
 		List<Product> products = productService.get();
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
-		if(user != null) {
+		if (user != null) {
 			return "client/home";
 		}
-			return "login";
-		}
+		return "login";
+	}
+
 	@PostMapping("/input-signup")
 	public String signUp(SignupModel signupModel) {
-		User user = userService.signUp(new User(signupModel.getUsername(), signupModel.getUsername(), signupModel.getPassword(), signupModel.getEmail()));
-		if(user != null) {
+		User user = userService.signUp(new User(signupModel.getUsername(), signupModel.getUsername(),
+				signupModel.getPassword(), signupModel.getEmail()));
+		if (user != null) {
 			return "login";
 		}
-			return "signup";
-		
+		return "signup";
+
 	}
-	
+
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
-	
+
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";
 	}
-	
+
 	@GetMapping("/profile")
 	public String profile() {
 		return "client/profile";
 	}
-	
-	
-	
+
 	@PostMapping("/signup")
 	public User signup(@RequestBody User userObj) {
 		return userService.signUp(userObj);
 	}
-	
-	
+
 	@GetMapping("")
-	public List<User> get(){
+	public List<User> get() {
 		return userService.get();
 	}
-	
+
 	@GetMapping("/{id}")
-	public User get(@PathVariable int id){
+	public User get(@PathVariable int id) {
 		System.out.print("id = " + id);
 		User userObj = userService.get(id);
-		
-		if(userObj == null) {
+
+		if (userObj == null) {
 			throw new RuntimeException("User not found");
 		}
 		return userObj;
 	}
-	
+
 	@PutMapping("")
 	public User update(@RequestBody User userObj) {
 		userService.save(userObj);
 		return userObj;
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable int id) {
 		userService.delete(id);
 		return "User has been delete with id: " + id;
 	}
-	
-	//test
+
+	// test
 	@GetMapping("/cart")
 	public String cart() {
 		return "client/cart";
 	}
-	
-	
+
 }

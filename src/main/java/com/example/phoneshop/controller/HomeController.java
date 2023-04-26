@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.phoneshop.model.Invoice;
 import com.example.phoneshop.model.Product;
 import com.example.phoneshop.model.User;
 import com.example.phoneshop.service.InvoiceService;
@@ -176,7 +177,9 @@ public class HomeController {
 	
 //	ORDER
 	@GetMapping("/admin/order")
-	public String adminOrder() {
+	public String adminOrder(Model model) {
+		List<Invoice> invoices = invoiceService.get();
+		model.addAttribute("invoices", invoices);
 		return "admin/admin-orderManagement";
 	}
 }

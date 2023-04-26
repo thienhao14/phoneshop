@@ -24,7 +24,6 @@ public class BrandController{
 	
 	@PostMapping("/brand")
 	public Brand save(@RequestBody Brand brandObj) {
-		System.out.print("post");
 		brandService.save(brandObj);
 		return brandObj;
 	}

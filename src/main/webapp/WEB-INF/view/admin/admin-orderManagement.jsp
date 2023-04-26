@@ -51,7 +51,7 @@
             <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
+            <a class="nav-link" href="/admin/order"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
       </div>
@@ -69,29 +69,33 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">ID</th>
-              <th scope="col">Tên đăng nhập</th>
-              <th scope="col">Email</th>
+              <th scope="col">User ID</th>
+              <th scope="col">Mã đơn</th>
+              <th scope="col">Số điện thoại</th>
+              <th scope="col">Địa chỉ</th>
+              <th scope="col">Payment</th>
+              <th scope="col">Số lượng</th>
+              <th scope="col">Tổng tiền</th>
               <th scope="col">Trạng thái</th>
-              <th scope="col">Quyền</th>
-              <th scope="col">Ngày tạo</th>
-              <th scope="col">Thao tác</th>
+              <td scope="col">Thao tác</td>
             </tr>
           </thead>
           <tbody>
-          <c:forEach items="${users}" var="user" varStatus="status">
+          <c:forEach items="${invoices}" var="order" varStatus="status">
             <tr>
-              <th scope="row" >${status.count}</th>
-              <td>${user.id}</td>
-              <td>${user.username}</td>
-              <td>${user.email}</td>
-              <td>${user.activeFlag}</td>
-              <td>Quyền</td>
-              <td>${user.createDate}</td>
-             
+              <th scope="row">${status.count}</th>
+              <td>${order.id}</td>
+              <td>user.id</td>
+              <td>${order.name}</td>
+              <td>${order.phoneNumber}</td>
+              <td>${order.address}</td>
+              <td>${order.payment}</td>
+              <td>${order.quantity}</td>
+              <td>${order.amount}</td>
+              <td>${order.status}</td>
               <td class="text-center text-nowrap">
                 <a class="btn btn-primary me-2" href="#" role="button">Xem</a>
-                <a class="btn btn-success me-2" href="/admin/admin-edit-user/${user.id}" role="button">Sửa</a>
-                <a class="btn btn-danger" href="/admin/user/${user.id}" role="button">Xóa</a>
+                
               </td>
             </tr>
            </c:forEach> 
