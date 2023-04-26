@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="vi">
-<title>Trang chủ Admin</title>
+<title>Admin Order Management</title>
 <jsp:include page="common.jsp"></jsp:include>
 
 <body>
@@ -14,8 +14,8 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-11 py-3">
-            <a class="text-body" href="/admin">
-              <h3>PhoneShop : Trang chủ Admin</h3>
+            <a class="text-body" href="./home.html">
+              <h3>PhoneShop : Admin</h3>
             </a>
           </div> <!-- col.// -->
           <div class="col-1">
@@ -33,7 +33,7 @@
     </section> <!-- header-main.// -->
   </header> <!-- section-header.// -->
 
-  <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+   <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,54 +51,63 @@
             <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/order"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
+            <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
       </div>
     </div> <!-- container.// -->
   </nav> <!-- navbar-main.// -->
 
-  <section class="section-content padding-y">
+  <section class="section-content">
     <div class="container">
-      <div class="card bg-light">
-        <div class="card-body p-5">
-          <h1 class="display-4 mb-5">Quản lý PhoneShop</h1>
-          <div class="row">
-            <div class="col-6 col-lg-3">
-              <figure class="card bg-primary text-white">
-                <div class="p-3">
-                  <h4 class="title">125</h4>
-                  <span>người dùng</span>
-                </div>
-              </figure>
-            </div>
-            <div class="col-6 col-lg-3">
-              <figure class="card">
-                <div class="p-3">
-                  <h4 class="title">25</h4>
-                  <span>Thương hiệu</span>
-                </div>
-              </figure>
-            </div>
-            <div class="col-6 col-lg-3">
-              <figure class="card">
-                <div class="p-3">
-                  <h4 class="title">475</h4>
-                  <span>Sản phẩm</span>
-                </div>
-              </figure>
-            </div>
-            <div class="col-6 col-lg-3">
-              <figure class="card">
-                <div class="p-3">
-                  <h4 class="title">115</h4>
-                  <span>Đơn hàng</span>
-                </div>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div> <!-- card.// -->
+      <header class="section-heading py-4 d-flex justify-content-between">
+        <h3 class="section-title">Quản lý đơn hàng</h3>
+      </header> <!-- section-heading.// -->
+      <main class="table-responsive-xl mb-5">
+        <table class="table table-bordered table-striped table-hover align-middle">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID</th>
+              <th scope="col">Tên đăng nhập</th>
+              <th scope="col">Email</th>
+              <th scope="col">Trạng thái</th>
+              <th scope="col">Quyền</th>
+              <th scope="col">Ngày tạo</th>
+              <th scope="col">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+          <c:forEach items="${users}" var="user" varStatus="status">
+            <tr>
+              <th scope="row" >${status.count}</th>
+              <td>${user.id}</td>
+              <td>${user.username}</td>
+              <td>${user.email}</td>
+              <td>${user.activeFlag}</td>
+              <td>Quyền</td>
+              <td>${user.createDate}</td>
+             
+              <td class="text-center text-nowrap">
+                <a class="btn btn-primary me-2" href="#" role="button">Xem</a>
+                <a class="btn btn-success me-2" href="/admin/admin-edit-user/${user.id}" role="button">Sửa</a>
+                <a class="btn btn-danger" href="/admin/user/${user.id}" role="button">Xóa</a>
+              </td>
+            </tr>
+           </c:forEach> 
+           
+          </tbody>
+        </table>
+      </main> <!-- book-manager-table.// -->
+      <nav class="mt-3 mb-5">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><a class="page-link" href="#">Trang trước</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Trang sau</a></li>
+        </ul>
+      </nav>
     </div> <!-- container.// -->
   </section> <!-- section-content.// -->
 
