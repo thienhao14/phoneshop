@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="vi">
-<title>Admin</title>
+<title>Trang chủ Admin</title>
 <jsp:include page="common.jsp"></jsp:include>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="row align-items-center">
           <div class="col-11 py-3">
             <a class="text-body" href="./home.html">
-              <h3>PhoneShop : Admin</h3>
+              <h3>PhoneShop : Trang chủ Admin</h3>
             </a>
           </div> <!-- col.// -->
           <div class="col-1">
@@ -45,13 +45,10 @@
             <a class="nav-link" href="/admin/user"><i class="bi bi-people"></i> Quản lý người dùng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thể loại</a>
+            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thương hiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/product"><i class="bi bi-book"></i> Quản lý sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-cart"></i> Quản lý giỏ hàng</a>
+            <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
@@ -65,7 +62,7 @@
     <div class="container">
       <div class="card bg-light">
         <div class="card-body p-5">
-          <h1 class="display-4 mb-5">Quản lý Shop Bán Sách</h1>
+          <h1 class="display-4 mb-5">Quản lý PhoneShop</h1>
           <div class="row">
             <div class="col-6 col-lg-3">
               <figure class="card bg-primary text-white">
@@ -79,7 +76,7 @@
               <figure class="card">
                 <div class="p-3">
                   <h4 class="title">25</h4>
-                  <span>thể loại sách</span>
+                  <span>Thương hiệu</span>
                 </div>
               </figure>
             </div>
@@ -87,7 +84,7 @@
               <figure class="card">
                 <div class="p-3">
                   <h4 class="title">475</h4>
-                  <span>sách</span>
+                  <span>Sản phẩm</span>
                 </div>
               </figure>
             </div>
@@ -95,7 +92,7 @@
               <figure class="card">
                 <div class="p-3">
                   <h4 class="title">115</h4>
-                  <span>đơn hàng</span>
+                  <span>Đơn hàng</span>
                 </div>
               </figure>
             </div>
@@ -107,7 +104,7 @@
 
   <footer class="section-footer">
     <section class="footer-bottom text-center bg-light border-top py-3">
-      <div class="container-fluid">© 2021 — Shop Bán Sách</div> <!-- container-fluid.// -->
+      <div class="container-fluid">© 2023 — PhoneShop</div> <!-- container-fluid.// -->
     </section> <!-- footer-bottom.// -->
   </footer> <!-- section-footer.// -->
 

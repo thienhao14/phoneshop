@@ -42,22 +42,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-people"></i> Quản lý người dùng</a>
+            <a class="nav-link" href="/admin/user"><i class="bi bi-people"></i> Quản lý người dùng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thể loại</a>
+            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thương hiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="bi bi-book"></i> Quản lý sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-cart"></i> Quản lý giỏ hàng</a>
+            <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
-
       </div>
     </div> <!-- container.// -->
   </nav> <!-- navbar-main.// -->

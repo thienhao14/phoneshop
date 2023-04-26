@@ -33,7 +33,7 @@
     </section> <!-- header-main.// -->
   </header> <!-- section-header.// -->
 
-  <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+   <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,22 +42,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-people"></i> Quản lý người dùng</a>
+            <a class="nav-link" href="/admin/user"><i class="bi bi-people"></i> Quản lý người dùng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thể loại</a>
+            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thương hiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="bi bi-book"></i> Quản lý sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-cart"></i> Quản lý giỏ hàng</a>
+            <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
           </li>
         </ul>
-
       </div>
     </div> <!-- container.// -->
   </nav> <!-- navbar-main.// -->
@@ -68,7 +64,7 @@
         <h3 class="section-title">Thêm sản phẩm</h3>
       </header> <!-- section-heading.// -->
       <main class="add-book-form mb-5">
-        <form action="/admin/admin-add-product" th:object="${user}" method="post" class="w-50">
+        <form action="/admin/admin-add-user" th:object="${user}" method="post" class="w-50">
           <div class="mb-3">
             <label for="add-user-name" class="form-label">User name</label>
             <input type="text" class="form-control" id="add-user-name" name="username">

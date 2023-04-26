@@ -16,7 +16,7 @@ import com.example.phoneshop.model.Brand;
 import com.example.phoneshop.service.BrandService;
 
 @RestController
-@RequestMapping("/curd")
+@RequestMapping("/home")
 public class BrandController{
 	
 	@Autowired
