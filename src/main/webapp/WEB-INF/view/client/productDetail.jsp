@@ -45,13 +45,13 @@
 						</div>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="img/570px-1.png" class="d-block w-100" alt="...">
+								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="img/570px-2.png" class="d-block w-100" alt="...">
+								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="img/570px-3.png" class="d-block w-100" alt="...">
+								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button"
@@ -103,7 +103,7 @@
 					</dl>
 
 					<div>
-						<a href="#" class="btn btn-primary">Mua ngay</a> <a href="#"
+						<a href="/cart/${product.id}" class="btn btn-primary">Mua ngay</a> <a href="#"
 							class="btn btn-light ms-2">Thêm vào giỏ hàng</a>
 					</div>
 

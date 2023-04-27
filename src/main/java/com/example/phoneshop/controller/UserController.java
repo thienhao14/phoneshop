@@ -54,6 +54,15 @@ public class UserController {
 		return "client/home-brand";
 	}
 
+	@GetMapping("/products")
+	public String homeProduct(Model model){
+		List<Category> categories = categoryService.get();
+		List<Product> products = productService.get();
+		model.addAttribute("categories", categories);
+		model.addAttribute("products", products);
+		return "client/home";
+	}
+	
 	@PostMapping("/home")
 	public String login(LoginModel loginModel, Model model, HttpSession session) {
 		User user = userService.checkLogin(new User(loginModel.getUsername(), loginModel.getPassword()));
@@ -126,10 +135,7 @@ public class UserController {
 		return "User has been delete with id: " + id;
 	}
 
-//	CART
-	@GetMapping("/cart")
-	public String cart() {
-		return "client/cart";
-	}
 
+
+	
 }

@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-3 py-3">
-            <a class="text-body" href="./home.html">
+            <a class="text-body" href="/user/products">
               <h3>Phone Shop</h3>
             </a>
           </div> <!-- col.// -->
@@ -24,19 +24,19 @@
           <div class="col-lg-5 col-xl-4">
             <ul class="nav col-12 col-lg-auto my-2 my-lg-0 justify-content-center justify-content-lg-end text-small">
               <li>
-                <a href="#" class="nav-link text-body">
+                <a href="/user/profile" class="nav-link text-body">
                   <i class="bi bi-person d-block text-center fs-3"></i>
                   Tài khoản
                 </a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="/order" class="nav-link text-body">
                   <i class="bi bi-list-check d-block text-center fs-3"></i>
                   Đơn hàng
                 </a>
-              </li>
+              </li> -->
               <li>
-                <a href="#" class="nav-link text-body">
+                <a href="/cart" class="nav-link text-body">
                   <i class="bi bi-cart d-block text-center fs-3"></i>
                   Giỏ hàng
                 </a>

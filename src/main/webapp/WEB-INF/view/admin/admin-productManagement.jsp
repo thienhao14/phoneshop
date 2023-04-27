@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="vi">
-<title>Admin Product Manager</title>
+<title>Admin Product Management</title>
 <jsp:include page="common.jsp"></jsp:include>
 
 <body>

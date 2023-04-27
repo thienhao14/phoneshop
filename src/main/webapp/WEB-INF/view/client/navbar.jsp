@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <body>
-<nav
+	<nav
 		class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
 		<div class="container">
 			<button class="navbar-toggler" type="button"
@@ -20,22 +20,15 @@
 							<strong><i class="bi bi-list"></i> Danh mục sản phẩm</strong>
 					</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Sách giáo khoa</a></li>
-							<li><a class="dropdown-item" href="#">Sách khoa học</a></li>
-							<li><a class="dropdown-item" href="#">Truyện tranh</a></li>
-							<li><a class="dropdown-item" href="#">Tiểu thuyết</a></li>
+
 							<li>
 								<hr class="dropdown-divider">
 							</li>
 							<li><a class="dropdown-item" href="#">Tất cả danh mục</a></li>
 						</ul></li>
-						
+
 					<li class="nav-item"><a class="nav-link" href="#">Sản phẩm
 							mới</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Sản phẩm
-							bán chạy</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Khuyến
-							mãi</a></li>
 				</ul>
 				<a class="btn btn-light me-2" href="#" role="button">Đăng ký</a> <a
 					class="btn btn-primary" href="#" role="button">Đăng nhập</a>
