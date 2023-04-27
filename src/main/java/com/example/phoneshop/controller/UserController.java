@@ -126,7 +126,7 @@ public class UserController {
 		return "User has been delete with id: " + id;
 	}
 
-	// test
+//	CART
 	@GetMapping("/cart")
 	public String cart() {
 		return "client/cart";

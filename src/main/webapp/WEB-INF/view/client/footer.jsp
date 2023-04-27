@@ -43,6 +43,6 @@
     </section> <!-- footer-top.// -->
 
     <section class="footer-bottom text-center bg-light border-top py-3">
-      <div class="container-fluid">© 2021 — Shop Bán Sách</div> <!-- container-fluid.// -->
+      <div class="container-fluid">© 2023 — PhoneShop</div> <!-- container-fluid.// -->
     </section> <!-- footer-bottom.// -->
   </footer> <!-- section-footer.// -->
