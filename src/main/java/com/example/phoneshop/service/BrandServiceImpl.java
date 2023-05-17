@@ -23,7 +23,7 @@ public class BrandServiceImpl implements BrandService {
 	
 	@Transactional
 	@Override
-	public Brand get(int id) {
+	public Brand get(long id) {
 		return brandDAO.get(id);
 	}
 

@@ -26,7 +26,7 @@ public class BrandDAOImpl implements BrandDAO {
 	}
 
 	@Override
-	public Brand get(int id) {
+	public Brand get(long id) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		Brand brandObj = currentSession.get(Brand.class, id);
 		return brandObj;

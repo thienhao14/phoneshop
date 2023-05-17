@@ -7,7 +7,7 @@ import com.example.phoneshop.model.Brand;
 
 public interface BrandService {
 	List<Brand> get();
-	Brand get(int id);
+	Brand get(long id);
 	void save(Brand brand);
 	void delete(int id);
 }

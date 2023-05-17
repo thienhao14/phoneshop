@@ -12,9 +12,9 @@
             </a>
           </div> <!-- col.// -->
           <div class="col-lg-4 col-xl-5">
-            <form action="#" class="search">
+            <form action="/user/product/search" class="search" method="get">
               <div class="input-group w-100">
-                <input type="text" class="form-control" placeholder="Nhập từ khóa cần tìm ...">
+                <input type="text" class="form-control"  name= "productName" placeholder="Nhập từ khóa cần tìm ...">
                 <button class="btn btn-primary" type="button">
                   <i class="bi bi-search"></i>
                 </button>

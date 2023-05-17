@@ -88,7 +88,7 @@
 					<dl class="row mb-4">
 						<dt class="col-xl-4 col-sm-5 col-6">Thương hiệu</dt>
 						<dd class="col-xl-8 col-sm-7 col-6">
-							<a href="#">product.brand</a>
+							<a href="#">${brand.name}</a>
 						</dd>
 
 

@@ -12,4 +12,6 @@ public interface ProductDAO {
 	void save(Product product);
 
 	void delete(int id);
+	
+	List<Product> search(String productName);
 }

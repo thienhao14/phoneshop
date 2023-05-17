@@ -15,7 +15,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Autowired
 	private EntityManager entityManager;
-	
+
 	@Override
 	public List<Product> get() {
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -36,7 +36,7 @@ public class ProductDAOImpl implements ProductDAO {
 	public void save(Product product) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		currentSession.saveOrUpdate(product);
-		
+
 	}
 
 	@Override
@@ -44,7 +44,17 @@ public class ProductDAOImpl implements ProductDAO {
 		Session currentSession = entityManager.unwrap(Session.class);
 		Product productObj = (Product) currentSession.get(Product.class, id);
 		currentSession.delete(productObj);
-		
+
+	}
+
+	@Override
+	public List<Product> search(String productName) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Product p where p.name like :productName");
+		query.setParameter("productName", '%' + productName + '%');
+		@SuppressWarnings("unchecked")
+		List<Product> list = query.list();
+		return list;
 	}
 
 }
