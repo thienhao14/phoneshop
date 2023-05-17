@@ -19,8 +19,9 @@
 
 	<section class="section-content padding-y">
 		<div class="container">
+		<div  style="color: red; text-align: center">${message}</div>
 			<div class="row">
-
+		<form action="/order" th:object="${invoiceObj}" method="post">
 				<main class="col-lg-9 mb-lg-0 mb-3">
 					<div class="card">
 
@@ -50,14 +51,16 @@
 														<a href="/user/product/product-detail/${item.product.id}"
 															class="title">${item.product.name}</a>
 													</figcaption>
+													<input name="name" type="hidden" value="${item.product.name}">
 												</figure>
 											</td>
 											<td>
 												<div class="price-wrap">
-													<span class="price">${item.product.price}</span>
+													<span class="price" >${item.product.price}</span>
+													<input name="amount" type="hidden" value="${item.product.price}">
 												</div>
 											</td>
-											<td><input type="number" value="${item.quantity}"
+											<td><input name="quantity" type="number" value="${item.quantity}"
 												min="1" class="form-control"></td>
 											<td class="text-center text-nowrap"><a href="#"
 												class="btn btn-success">Cập nhật</a> <a
@@ -71,7 +74,7 @@
 						<!-- table.responsive-md.// -->
 
 						<div class="card-body border-top">
-							<a href="#" class="btn btn-primary float-end">Đặt hàng</a> <a
+							<button type="submit" class="btn btn-primary float-end">Đặt hàng</button> <a
 								href="/user/products" class="btn btn-light">Tiếp tục mua sắm</a>
 						</div>
 						<!-- card-body.// -->
@@ -79,6 +82,7 @@
 					</div>
 					<!-- card.// -->
 				</main>
+				</form>
 				<!-- col.// -->
 
 				<aside class="col-lg-3">

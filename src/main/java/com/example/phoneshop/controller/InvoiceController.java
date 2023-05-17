@@ -1,9 +1,11 @@
 package com.example.phoneshop.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,9 +25,13 @@ public class InvoiceController {
 	private InvoiceService invoiceService;
 
 	@PostMapping("")
-	public Invoice save(@RequestBody Invoice invoiceObj) {
-		invoiceService.save(invoiceObj);
-		return invoiceObj;
+	public String save(Invoice invoiceObj, Model model) {
+		System.out.println(invoiceObj);
+		invoiceObj.setActiveFlag(1);
+		invoiceObj.setCreateDate( new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+ 		invoiceService.save(invoiceObj);
+ 		model.addAttribute("message", "Ordered successfully");
+ 		return "/client/cart";
 	}
 
 	@GetMapping("")
@@ -44,6 +50,7 @@ public class InvoiceController {
 
 	@PutMapping("")
 	public Invoice update(@RequestBody Invoice invoiceObj) {
+		invoiceObj.setActiveFlag(1);
 		invoiceService.save(invoiceObj);
 		return invoiceObj;
 	}
