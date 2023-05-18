@@ -12,4 +12,8 @@ public interface UserDAO {
 	User checkLogin(User userObj);
 	User signUp(User userObj);
 	boolean checkExists(User userObj);
+	int numberOfUser();
+	int numberOfBrand();
+	int numberOfProduct();
+	int numberOfOrder();
 }

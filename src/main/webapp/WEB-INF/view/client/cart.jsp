@@ -19,75 +19,109 @@
 
 	<section class="section-content padding-y">
 		<div class="container">
-		<div  style="color: red; text-align: center">${message}</div>
+			<div style="color: red; text-align: center">${message}</div>
 			<div class="row">
-		<form action="/order" th:object="${invoiceObj}" method="post">
-				<main class="col-lg-9 mb-lg-0 mb-3">
-					<div class="card">
+				<form action="/order" th:object="${invoiceObj}" method="post">
+					<main class="col-lg-9 mb-lg-0 mb-3">
+						<div class="card">
 
-						<div class="table-responsive-xl">
-							<table class="cart-table table table-borderless">
-								<thead class="text-muted">
-									<tr class="small text-uppercase">
-										<th scope="col" style="min-width: 280px;">Sản phẩm</th>
-										<th scope="col" width="150" style="min-width: 150px;">Giá</th>
-										<th scope="col" width="150" style="min-width: 150px;">Số
-											lượng</th>
-										<th scope="col" width="100" style="min-width: 100px;"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:set var="total" value="0"></c:set>
-									<c:forEach items="${cart}" var="item">
-										<c:set var="total"
-											value="${total + item.product.price * item.quantity }"></c:set>
-										<tr>
-											<td>
-												<figure class="itemside">
-													<div class="float-start me-3">
-														<img src="img/80px.png">
-													</div>
-													<figcaption class="info">
-														<a href="/user/product/product-detail/${item.product.id}"
-															class="title">${item.product.name}</a>
-													</figcaption>
-													<input name="name" type="hidden" value="${item.product.name}">
-												</figure>
-											</td>
-											<td>
-												<div class="price-wrap">
-													<span class="price" >${item.product.price}</span>
-													<input name="amount" type="hidden" value="${item.product.price}">
-												</div>
-											</td>
-											<td><input name="quantity" type="number" value="${item.quantity}"
-												min="1" class="form-control"></td>
-											<td class="text-center text-nowrap"><a href="#"
-												class="btn btn-success">Cập nhật</a> <a
-												href="/remove/${item.product.id}"
-												class="btn btn-danger ms-1">Xóa</a></td>
+							<div class="table-responsive-xl">
+								<table class="cart-table table table-borderless">
+									<thead class="text-muted">
+										<tr class="small text-uppercase">
+											<th scope="col" style="min-width: 280px;">Sản phẩm</th>
+											<th scope="col" width="150" style="min-width: 150px;">Giá</th>
+											<th scope="col" width="150" style="min-width: 150px;">Số
+												lượng</th>
+											<th scope="col" width="100" style="min-width: 100px;"></th>
 										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-						<!-- table.responsive-md.// -->
+									</thead>
+									<tbody>
+										<c:set var="total" value="0"></c:set>
+										<c:forEach items="${cart}" var="item">
+											<c:set var="total"
+												value="${total + item.product.price * item.quantity }"></c:set>
+											<tr>
+												<td>
+													<figure class="itemside">
+														<div class="float-start me-3">
+															<img src="img/80px.png">
+														</div>
+														<figcaption class="info">
+															<a href="/user/product/product-detail/${item.product.id}"
+																class="title">${item.product.name}</a>
+														</figcaption>
+														<input name="name" type="hidden"
+															value="${item.product.name}">
+													</figure>
+												</td>
+												<td>
+											
+													<div class="price-wrap">
+														<span class="price">${item.product.price}</span> <input
+															name="amount" type="hidden" value="${item.product.price}">
+													</div>
+												</td>
+												<td><input name="quantity" type="number"
+													value="${item.quantity}" min="1" class="form-control"></td>
+												<td class="text-center text-nowrap"><a href="#"
+													class="btn btn-success">Cập nhật</a> <a
+													href="/remove/${item.product.id}"
+													class="btn btn-danger ms-1">Xóa</a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+							<!-- table.responsive-md.// -->
 
-						<div class="card-body border-top">
-							<button type="submit" class="btn btn-primary float-end">Đặt hàng</button> <a
-								href="/user/products" class="btn btn-light">Tiếp tục mua sắm</a>
+
+							<!-- card-body.// -->
+
+						</div>
+						<!-- card.// -->
+					</main>
+					<div class="">
+						<div class="card-body">
+							<dl class="row mb-0">
+
+								<dd>
+									Tổng cộng: <strong>${total}</strong>
+								</dd>
+							</dl>
 						</div>
 						<!-- card-body.// -->
-
 					</div>
-					<!-- card.// -->
-				</main>
+					<main class="col-lg-9 mb-lg-0 mb-3">
+						<div class="card">
+
+							<div class="table-responsive-xl">
+								<input required size="50" type="text" class="form-control"
+									placeholder="Số điện thoại" name="phoneNumber"> <br>
+								<input required size="50" type="text" class="form-control"
+									placeholder="Địa chỉ nhận hàng" name="address">
+							</div>
+							<!-- table.responsive-md.// -->
+
+
+							<!-- card-body.// -->
+
+						</div>
+						<!-- card.// -->
+					</main>
+
+
+					<div class="card-body border-top">
+						<button type="submit" class="btn btn-primary">Đặt hàng</button>
+						<a href="/user/products" class="btn btn-light">Tiếp tục mua
+							sắm</a>
+					</div>
 				</form>
 				<!-- col.// -->
 
 				<aside class="col-lg-3">
 
-					<div class="card mb-3">
+					<%-- 					<div class="card mb-3">
 						<div class="card-body">
 							<p class="card-title">Hình thức giao hàng</p>
 							<form action="">
@@ -106,22 +140,11 @@
 							</form>
 						</div>
 						<!-- card-body.// -->
-					</div>
+					</div> --%>
 					<!-- card.// -->
 
 
-					<div class="card">
-						<div class="card-body">
-							<dl class="row mb-0">
 
-								<dt class="col-xxl-6 col-lg-12 col-6">Tổng cộng:</dt>
-								<dd class="col-xxl-6 col-lg-12 col-6 text-end mb-3">
-									<strong>${total}</strong>
-								</dd>
-							</dl>
-						</div>
-						<!-- card-body.// -->
-					</div>
 					<!-- card.// -->
 
 				</aside>

@@ -38,7 +38,11 @@
               <li>
                 <a href="/cart" class="nav-link text-body">
                   <i class="bi bi-cart d-block text-center fs-3"></i>
-                  Giỏ hàng
+                  Giỏ hàng 
+
+				<c:if test="${cart != null}">
+  					<span style="color:red">(${cart.size()})</span>
+				</c:if>
                 </a>
               </li>
             </ul>

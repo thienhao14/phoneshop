@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.phoneshop.model.Brand;
 import com.example.phoneshop.model.Invoice;
 import com.example.phoneshop.model.Product;
 import com.example.phoneshop.model.User;
+import com.example.phoneshop.service.BrandService;
 import com.example.phoneshop.service.InvoiceService;
 import com.example.phoneshop.service.ProductService;
 import com.example.phoneshop.service.UserService;
@@ -23,6 +25,9 @@ public class HomeController {
 
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private BrandService brandService;
 
 	@Autowired
 	private UserService userService;
@@ -36,7 +41,16 @@ public class HomeController {
 	}
 
 	@GetMapping("/admin")
-	public String adminHome() {
+	public String adminHome(Model model) {
+		int numberOfUser =  userService.numberOfUser();
+		int numberOfBrand=userService.numberOfBrand();
+		int numberOfProduct=userService.numberOfProduct();
+		int numberOfOrder=userService.numberOfOrder();
+		
+		model.addAttribute("numberOfUser", numberOfUser);
+		model.addAttribute("numberOfBrand", numberOfBrand);
+		model.addAttribute("numberOfProduct", numberOfProduct);
+		model.addAttribute("numberOfOrder", numberOfOrder);
 		return "admin/admin";
 	}
 
@@ -45,6 +59,14 @@ public class HomeController {
 	@GetMapping("/admin/product")
 	public String adminProduct(Model model) {
 		List<Product> products = productService.get();
+		System.out.print(products);
+//		for(int i = 0; i<= products.size(); i++) {
+//			int brandId = products.get(i).getBrandId();
+//			Brand brand = brandService.get(brandId);
+//			System.out.print(brand);
+//			products.get(i).setBrand(brand.getName());
+//		} 
+//		
 		model.addAttribute("products", products);
 		return "admin/admin-productManagement";
 	}

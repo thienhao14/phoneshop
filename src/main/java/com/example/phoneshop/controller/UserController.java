@@ -60,6 +60,7 @@ public class UserController {
 		List<Product> products = productService.get();
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
+		System.out.print(products);
 		return "client/home";
 	}
 	
@@ -71,8 +72,16 @@ public class UserController {
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
 		if (user != null) {
+			session.setAttribute("sessionLogin", user);
 			return "client/home";
 		}
+		return "login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("sessionLogin");
+		session.removeAttribute("cart");
 		return "login";
 	}
 
@@ -96,7 +105,8 @@ public class UserController {
 	public String signup() {
 		return "signup";
 	}
-
+	
+	
 	@GetMapping("/profile")
 	public String profile() {
 		return "client/profile";

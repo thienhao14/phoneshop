@@ -54,6 +54,26 @@ public class UserServiceImpl implements UserService {
 	public User signUp(User userObj) {
 		return userDAO.signUp(userObj);
 	}
+
+	@Override
+	public int numberOfUser() {
+		return userDAO.numberOfUser();
+	}
+
+	@Override
+	public int numberOfBrand() {
+		return userDAO.numberOfBrand();
+	}
+
+	@Override
+	public int numberOfProduct() {
+		return userDAO.numberOfProduct();
+	}
+
+	@Override
+	public int numberOfOrder() {
+		return userDAO.numberOfOrder();
+	}
 	
 	
 

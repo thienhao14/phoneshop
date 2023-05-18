@@ -69,14 +69,14 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">ID</th>
-              <th scope="col">User ID</th>
+              
               <th scope="col">Mã đơn</th>
               <th scope="col">Số điện thoại</th>
               <th scope="col">Địa chỉ</th>
-              <th scope="col">Payment</th>
+            
               <th scope="col">Số lượng</th>
               <th scope="col">Tổng tiền</th>
-              <th scope="col">Trạng thái</th>
+              
               <td scope="col">Thao tác</td>
             </tr>
           </thead>
@@ -85,14 +85,14 @@
             <tr>
               <th scope="row">${status.count}</th>
               <td>${order.id}</td>
-              <td>user.id</td>
+              
               <td>${order.name}</td>
               <td>${order.phoneNumber}</td>
               <td>${order.address}</td>
-              <td>${order.payment}</td>
+              
               <td>${order.quantity}</td>
               <td>${order.amount}</td>
-              <td>${order.status}</td>
+             
               <td class="text-center text-nowrap">
                 <a class="btn btn-primary me-2" href="#" role="button">Xem</a>
                 

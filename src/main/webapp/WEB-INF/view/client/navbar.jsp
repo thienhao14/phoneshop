@@ -30,8 +30,18 @@
 					<li class="nav-item"><a class="nav-link" href="#">Sản phẩm
 							mới</a></li>
 				</ul>
-				<a class="btn btn-light me-2" href="#" role="button">Đăng ký</a> <a
-					class="btn btn-primary" href="#" role="button">Đăng nhập</a>
+				<c:if test="${sessionLogin != null}">
+    			 	Chào: <h3 style="color:red">${sessionLogin.username}</h3>
+    			 	<a class="btn btn-primary" href="logout" role="button">Đăng
+					xuất</a>
+				</c:if>
+				<c:if test="${sessionLogin == null}">
+    				<a class="btn btn-light me-2" href="signup" role="button">Đăng
+					ký</a> <a class="btn btn-primary" href="login" role="button">Đăng
+					nhập</a>
+				</c:if>
+				
+				
 			</div>
 		</div>
 		<!-- container.// -->

@@ -85,6 +85,7 @@ public class Product {
 	public void setBrandId(Integer brandId) {
 		this.brandId = brandId;
 	}
+	
 	public String getName() {
 		return name;
 	}

@@ -73,7 +73,7 @@
               <th scope="col">Tên đăng nhập</th>
               <th scope="col">Email</th>
               <th scope="col">Trạng thái</th>
-              <th scope="col">Quyền</th>
+              
               <th scope="col">Ngày tạo</th>
               <th scope="col">Thao tác</th>
             </tr>
@@ -86,7 +86,7 @@
               <td>${user.username}</td>
               <td>${user.email}</td>
               <td>${user.activeFlag}</td>
-              <td>Quyền</td>
+           
               <td>${user.createDate}</td>
              
               <td class="text-center text-nowrap">

@@ -111,4 +111,44 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+
+	@Override
+	public int numberOfUser() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from User");
+		@SuppressWarnings("unchecked")
+		List<User> list = query.list();
+		return list.size();
+	}
+
+
+	@Override
+	public int numberOfBrand() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Brand");
+		@SuppressWarnings("unchecked")
+		List<User> list = query.list();
+		return list.size();
+	}
+
+
+	@Override
+	public int numberOfProduct() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Product");
+		@SuppressWarnings("unchecked")
+		List<User> list = query.list();
+		return list.size();
+	}
+
+
+	@Override
+	public int numberOfOrder() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Invoice");
+		@SuppressWarnings("unchecked")
+		List<User> list = query.list();
+		return list.size();
+	}
+
 }

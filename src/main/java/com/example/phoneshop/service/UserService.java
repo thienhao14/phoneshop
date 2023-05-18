@@ -11,4 +11,8 @@ public interface UserService {
 	void delete(int id);
 	User checkLogin(User userObj);
 	User signUp(User userObj);
+	int numberOfUser();
+	int numberOfBrand();
+	int numberOfProduct();
+	int numberOfOrder();
 }

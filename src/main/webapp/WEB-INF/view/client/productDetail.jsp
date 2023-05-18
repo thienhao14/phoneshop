@@ -45,13 +45,13 @@
 						</div>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
+								<img src="${product.imgList}" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
+								<img src="${product.imgList}" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="https://cdn.tgdd.vn/Products/Images/42/217438/vsmart-active-3-xanh-duong-600x600-200x200.jpg" class="d-block w-100" alt="...">
+								<img src="${product.imgList}" class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button"

@@ -3,6 +3,8 @@ package com.example.phoneshop.controller;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,11 +27,12 @@ public class InvoiceController {
 	private InvoiceService invoiceService;
 
 	@PostMapping("")
-	public String save(Invoice invoiceObj, Model model) {
+	public String save(Invoice invoiceObj, Model model, HttpSession session) {
 		System.out.println(invoiceObj);
 		invoiceObj.setActiveFlag(1);
 		invoiceObj.setCreateDate( new java.sql.Date(Calendar.getInstance().getTime().getTime()));
  		invoiceService.save(invoiceObj);
+ 		session.removeAttribute("cart");
  		model.addAttribute("message", "Ordered successfully");
  		return "/client/cart";
 	}

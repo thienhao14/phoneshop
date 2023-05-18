@@ -67,28 +67,16 @@ use dbinvoice;
 CREATE TABLE `invoice` (
   `id` int(11) NOT NULL auto_increment primary key,
   `userId` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `phoneNumber` varchar(12) NOT NULL,
-  `address` text NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phoneNumber` varchar(12) DEFAULT NULL,
+  `address` text DEFAULT NULL,
   `payment` int(1) DEFAULT NULL,
   `quantity` int(5) DEFAULT NULL,
   `amount` decimal(20,1) DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
   `activeFlag` int(1) NOT NULL DEFAULT 1,
-  `createDate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updateDate` timestamp NOT NULL DEFAULT current_timestamp()
+  `createDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `invoice`
---
-
-INSERT INTO `invoice` (`id`, `userId`, `name`, `phoneNumber`, `address`, `payment`, `quantity`, `amount`, `status`, `activeFlag`, `createDate`, `updateDate`) VALUES
-(1, 1, '#111', '123456789', 'Thu Duc', 1, 2, '4800000.0', 0, 1, '2020-08-16 02:59:52', '2020-08-19 02:59:56'),
-(2, 2, '#444', '1235656', 'Da Nang', 1, 2, '50000000.0', 1, 1, '2020-08-05 03:02:44', '2020-08-06 03:02:47'),
-(3, 3, '#555', '9876543826', 'Quan 9', 2, 3, '20000.0', 1, 1, '2020-08-11 13:35:06', '2020-08-11 13:35:06'),
-(4, 4, '#222', '9836589274', 'Binh Duong', 3, 1, '70000.0', 1, 1, '2020-08-11 13:35:30', '2020-08-11 13:35:30'),
-(5, 5, '#333', '5738462826', 'Quan 1', 1, 2, '5000.0', 1, 1, '2020-08-11 13:45:47', '2020-08-11 13:45:47');
 
 -- --------------------------------------------------------
 

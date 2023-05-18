@@ -28,7 +28,7 @@
 							<div class="card-body">
 								<a href="/user/home-brand" class="stretched-link">
 									<div class="d-flex align-items-center">
-										<img src="img/50px.png"> <span
+										<img width="100px" src="https://img.freepik.com/premium-vector/file-transfer-flat-design-vector-illustration_16734-320.jpg?w=1060"> <span
 											class="category-title ms-3">${category.name}</span>
 									</div>
 								</a>
@@ -58,7 +58,7 @@
 						<div class="card p-3 mb-4">
 							<a href="/user/product/product-detail/${product.id}"
 								class="img-wrap text-center"> <img class="img-fluid"
-								src="img/200px.png">
+								src="${product.imgList}">
 							</a>
 							<figcaption class="info-wrap mt-2">
 								<a href="/user/product/product-detail/${product.id}"

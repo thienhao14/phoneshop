@@ -93,12 +93,12 @@
 								<th scope="row" >${status.count}</th>
 								<td>${product.id}</td>
 								<td>${product.name}</td>
-								<td>product.brand</td>
+								<td>${product.brandId}</td>
 								<td>${product.price}</td>
 								<td>${product.discount}</td>
 								<td>${product.description}</td>
 								<td>${product.quantity}</td>
-								<td>product.createDate</td>
+								<td>${product.createDate}</td>
 
 								<td class="text-center text-nowrap"><a
 									class="btn btn-primary me-2" href="#" role="button">Xem</a> <a

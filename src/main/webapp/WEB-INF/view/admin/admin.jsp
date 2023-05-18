@@ -21,7 +21,7 @@
           <div class="col-1">
             <ul class="nav col-12 col-lg-auto my-2 my-lg-0 justify-content-center justify-content-lg-end text-small">
               <li>
-                <a href="#" class="nav-link text-body">
+                <a href="user/login" class="nav-link text-body">
                   <i class="bi bi-window d-block text-center fs-3"></i>
                   Client
                 </a>
@@ -67,7 +67,7 @@
             <div class="col-6 col-lg-3">
               <figure class="card bg-primary text-white">
                 <div class="p-3">
-                  <h4 class="title">125</h4>
+                  <h4 class="title">${numberOfUser}</h4>
                   <span>người dùng</span>
                 </div>
               </figure>
@@ -75,7 +75,7 @@
             <div class="col-6 col-lg-3">
               <figure class="card">
                 <div class="p-3">
-                  <h4 class="title">25</h4>
+                  <h4 class="title">${numberOfBrand}</h4>
                   <span>Thương hiệu</span>
                 </div>
               </figure>
@@ -83,7 +83,7 @@
             <div class="col-6 col-lg-3">
               <figure class="card">
                 <div class="p-3">
-                  <h4 class="title">475</h4>
+                  <h4 class="title">${numberOfProduct}</h4>
                   <span>Sản phẩm</span>
                 </div>
               </figure>
@@ -91,7 +91,7 @@
             <div class="col-6 col-lg-3">
               <figure class="card">
                 <div class="p-3">
-                  <h4 class="title">115</h4>
+                  <h4 class="title">${numberOfOrder}</h4>
                   <span>Đơn hàng</span>
                 </div>
               </figure>
