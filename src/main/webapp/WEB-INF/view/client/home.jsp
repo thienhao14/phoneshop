@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Trang chủ</title>
@@ -29,8 +29,9 @@
 							<div class="card-body">
 								<a href="/user/home-brand" class="stretched-link">
 									<div class="d-flex align-items-center">
-										<img width="100px" src="https://img.freepik.com/premium-vector/file-transfer-flat-design-vector-illustration_16734-320.jpg?w=1060"> <span
-											class="category-title ms-3">${category.name}</span>
+										<img width="100px"
+											src="https://img.freepik.com/premium-vector/file-transfer-flat-design-vector-illustration_16734-320.jpg?w=1060">
+										<span class="category-title ms-3">${category.name}</span>
 									</div>
 								</a>
 							</div>
@@ -65,9 +66,8 @@
 								<a href="/user/product/product-detail/${product.id}"
 									class="title">${product.name}</a>
 								<div class="price mt-1 fw-bold">
-								<fmt:formatNumber pattern="#,##0" value="${product.price}"
-								/>
-								
+									<fmt:formatNumber pattern="#,##0" value="${product.price}" />
+
 								</div>
 							</figcaption>
 						</div>

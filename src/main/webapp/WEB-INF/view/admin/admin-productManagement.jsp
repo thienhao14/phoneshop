@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Admin Product Management</title>
@@ -19,15 +20,7 @@
 						</a>
 					</div>
 					<!-- col.// -->
-					<div class="col-1">
-						<ul
-							class="nav col-12 col-lg-auto my-2 my-lg-0 justify-content-center justify-content-lg-end text-small">
-							<li><a href="#" class="nav-link text-body"> <i
-									class="bi bi-window d-block text-center fs-3"></i> Client
-							</a></li>
-						</ul>
-					</div>
-					<!-- col.// -->
+
 				</div>
 				<!-- row.// -->
 			</div>
@@ -37,37 +30,38 @@
 	</header>
 	<!-- section-header.// -->
 
-	 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/user"><i class="bi bi-people"></i> Quản lý người dùng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-tags"></i> Quản lý thương hiệu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/product"><i class="bi bi-phone"></i> Quản lý sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/order"><i class="bi bi-inboxes"></i> Quản lý đơn hàng</a>
-          </li>
-        </ul>
-      </div>
-    </div> <!-- container.// -->
-  </nav> <!-- navbar-main.// -->
+	<nav
+		class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+		<div class="container">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/admin/user"><i
+							class="bi bi-people"></i> Quản lý người dùng</a></li>
+					<li class="nav-item"><a class="nav-link" href="#"><i
+							class="bi bi-tags"></i> Quản lý thương hiệu</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/product"><i
+							class="bi bi-phone"></i> Quản lý sản phẩm</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/order"><i
+							class="bi bi-inboxes"></i> Quản lý đơn hàng</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- container.// -->
+	</nav>
+	<!-- navbar-main.// -->
 
 	<section class="section-content">
 		<div class="container">
 			<header class="section-heading py-4 d-flex justify-content-between">
 				<h3 class="section-title">Quản lý sản phẩm</h3>
-				<a class="btn btn-primary" href="/admin/admin-add-product" role="button"
-					style="height: fit-content;">Thêm sản phẩm</a>
+				<a class="btn btn-primary" href="/admin/admin-add-product"
+					role="button" style="height: fit-content;">Thêm sản phẩm</a>
 			</header>
 			<!-- section-heading.// -->
 			<main class="table-responsive-xl mb-5">
@@ -75,12 +69,12 @@
 					class="table table-bordered table-striped table-hover align-middle">
 					<thead>
 						<tr>
-							<th scope="row" >#</th>
+							<th scope="row">#</th>
 							<th scope="col">ID</th>
 							<th scope="col">Tên sản phẩm</th>
 							<th scope="col">Thương hiệu</th>
 							<th scope="col">Giá</th>
-							<th scope="col">Khuyến mãi</th>
+
 							<th scope="col">Mô tả</th>
 							<th scope="col">Số lượng</th>
 							<th scope="col">Ngày tạo</th>
@@ -90,20 +84,23 @@
 					<tbody>
 						<c:forEach items="${products}" var="product" varStatus="status">
 							<tr>
-								<th scope="row" >${status.count}</th>
+								<th scope="row">${status.count}</th>
 								<td>${product.id}</td>
 								<td>${product.name}</td>
 								<td>${product.brandId}</td>
-								<td>${product.price}</td>
-								<td>${product.discount}</td>
+								<td><fmt:formatNumber pattern="#,##0"
+										value="${product.price}" /></td>
+
 								<td>${product.description}</td>
 								<td>${product.quantity}</td>
 								<td>${product.createDate}</td>
 
 								<td class="text-center text-nowrap"><a
 									class="btn btn-primary me-2" href="#" role="button">Xem</a> <a
-									class="btn btn-success me-2" href="/admin/admin-edit-product/${product.id}" role="button">Sửa</a> <a
-									class="btn btn-danger"data-method="DELETE" href="/admin/product/${product.id}" role="button">Xóa</a></td>
+									class="btn btn-success me-2"
+									href="/admin/admin-edit-product/${product.id}" role="button">Sửa</a>
+									<a class="btn btn-danger" data-method="DELETE"
+									href="/admin/product/${product.id}" role="button">Xóa</a></td>
 							</tr>
 						</c:forEach>
 

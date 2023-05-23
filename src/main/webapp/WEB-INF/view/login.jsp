@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <head>
-	<link rel="stylesheet" href="/login-signup/css/style.css">
-	<link rel="stylesheet" href="/login-signup/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="/login-signup/css/style.css">
+<link rel="stylesheet"
+	href="/login-signup/fonts/material-icon/css/material-design-iconic-font.min.css">
 </head>
 <body>
 	<div class="main">
@@ -13,14 +14,17 @@
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="https://www.pngfind.com/pngs/m/89-893676_computer-icons-user-laptop-personal-computer-computer-girl.png" alt="sing up image">
+							<img
+								src="https://cdn.pixabay.com/photo/2017/03/21/02/00/user-2160923_960_720.png"
+								alt="sing up image">
 						</figure>
 						<a href="#" class="signup-image-link">Create an account</a>
 					</div>
 
-					<div class="signin-form" >
+					<div class="signin-form">
 						<h2 class="form-title">Log in</h2>
-						<form action="/user/home" th:object="${loginModel}" method="post" class="register-form" id="login-form">
+						<form action="/user/home" th:object="${loginModel}" method="post"
+							class="register-form" id="login-form">
 							<div class="form-group">
 								<label for="your_name"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input

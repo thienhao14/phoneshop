@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Trang chủ</title>
@@ -17,9 +17,10 @@
 		<div class="container">
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item" aria-current="page"><a href="/user/home">Trang
-							chủ</a></li>
-					<li class="breadcrumb-item" aria-current="page"><a href="/user/home">Sản phẩm</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a
+						href="/user/home">Trang chủ</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a
+						href="/user/home">Sản phẩm</a></li>
 					<li class="breadcrumb-item active" aria-current="page">${product.name}</li>
 				</ol>
 			</nav>
@@ -78,13 +79,12 @@
 							class="bi bi-star-fill active"></i> <i
 							class="bi bi-star-fill active"></i> <i
 							class="bi bi-star-fill active"></i> <i class="bi bi-star-fill"></i>
-						
 					</div>
 
 					<div class="mb-4">
-						<span class="price h4">
-						<fmt:formatNumber pattern="#,##0" value="${product.price}"/></span>
-						
+						<span class="price h4"> <fmt:formatNumber pattern="#,##0"
+								value="${product.price}" /></span>
+
 					</div>
 
 					<dl class="row mb-4">
@@ -105,8 +105,8 @@
 					</dl>
 
 					<div>
-						<a href="/cart/${product.id}" class="btn btn-primary">Mua ngay</a> <a href="#"
-							class="btn btn-light ms-2">Thêm vào giỏ hàng</a>
+						<a href="/cart/${product.id}" class="btn btn-primary">Mua ngay</a>
+						<a href="#" class="btn btn-light ms-2">Thêm vào giỏ hàng</a>
 					</div>
 
 				</main>
@@ -122,10 +122,8 @@
 			<div class="row">
 				<div class="col">
 					<h3 class="pb-2">Mô tả sản phẩm</h3>
-					<p>
-					${product.description}
-					</p>
-					
+					<p>${product.description}</p>
+
 				</div>
 			</div>
 		</div>
@@ -135,27 +133,27 @@
 
 	<section class="section-content mb-5">
 		<div class="container">
-			
-					<h3 class="pb-2">Thêm bình luận</h3>
-					<div class="ratting-form-wrapper">
-						<div class="ratting-form">
-							<form action="">
 
-								<div class="row mb-3">
-									<div class="col">
-										<textarea class="form-control" placeholder="Nội dung đánh giá"
-											rows="3"></textarea>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-primary">Gửi bình
-									luận</button>
-							</form>
+			<h3 class="pb-2">Thêm bình luận</h3>
+			<div class="ratting-form-wrapper">
+				<div class="ratting-form">
+					<form action="">
+
+						<div class="row mb-3">
+							<div class="col">
+								<textarea class="form-control" placeholder="Nội dung đánh giá"
+									rows="3"></textarea>
+							</div>
 						</div>
-					</div>
+						<button type="submit" class="btn btn-primary">Gửi bình
+							luận</button>
+					</form>
 				</div>
-				<!-- col.// -->
 			</div>
-			<!-- row.// -->
+		</div>
+		<!-- col.// -->
+		</div>
+		<!-- row.// -->
 		</div>
 		<!-- container.//  -->
 	</section>
@@ -165,20 +163,21 @@
 		<div class="container">
 			<h3 class="pb-2">Sản phẩm liên quan</h3>
 			<div class="row item-grid">
-			<c:forEach items="${products}" var="product">
-				<div class="col-lg-3 col-md-6">
-					<div class="card p-3 mb-4">
-						<a href="#" class="img-wrap text-center"> <img
-							class="img-fluid" src="${product.imgList}">
-						</a>
-						<figcaption class="info-wrap mt-2">
-							<a href="#" class="title">${product.name}</a>
-							<div class="price mt-1 fw-bold"><fmt:formatNumber pattern="#,##0" value="${product.price}"
-								/></div>
-						</figcaption>
+				<c:forEach items="${products}" var="product">
+					<div class="col-lg-3 col-md-6">
+						<div class="card p-3 mb-4">
+							<a href="/user/product/product-detail/${product.id}" class="img-wrap text-center"> <img
+								class="img-fluid" src="${product.imgList}">
+							</a>
+							<figcaption class="info-wrap mt-2">
+								<a href="#" class="title">${product.name}</a>
+								<div class="price mt-1 fw-bold">
+									<fmt:formatNumber pattern="#,##0" value="${product.price}" />
+								</div>
+							</figcaption>
+						</div>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
 
 			</div>
 			<!-- row.// -->
