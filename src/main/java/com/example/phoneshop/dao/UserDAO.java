@@ -16,4 +16,5 @@ public interface UserDAO {
 	int numberOfBrand();
 	int numberOfProduct();
 	int numberOfOrder();
+	
 }

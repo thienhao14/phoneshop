@@ -14,7 +14,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-11 py-3">
-						<a class="text-body" href="./home.html">
+						<a class="text-body" href="/admin">
 							<h3>PhoneShop : Admin</h3>
 						</a>
 					</div>

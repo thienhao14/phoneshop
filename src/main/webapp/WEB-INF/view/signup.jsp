@@ -40,7 +40,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="https://www.pngfind.com/pngs/m/89-893676_computer-icons-user-laptop-personal-computer-computer-girl.png" alt="sing up image"></figure>
                         <a href="#" class="signup-image-link">I am already member</a>
                     </div>
                 </div>

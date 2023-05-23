@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Giỏ hàng</title>
@@ -45,7 +46,7 @@
 												<td>
 													<figure class="itemside">
 														<div class="float-start me-3">
-															<img src="img/80px.png">
+															<img width="80px" src="${item.product.imgList}">
 														</div>
 														<figcaption class="info">
 															<a href="/user/product/product-detail/${item.product.id}"
@@ -58,7 +59,8 @@
 												<td>
 											
 													<div class="price-wrap">
-														<span class="price">${item.product.price}</span> <input
+														<span class="price"><fmt:formatNumber pattern="#,##0" value="${item.product.price}"
+								/></span> <input
 															name="amount" type="hidden" value="${item.product.price}">
 													</div>
 												</td>
@@ -86,7 +88,8 @@
 							<dl class="row mb-0">
 
 								<dd>
-									Tổng cộng: <strong>${total}</strong>
+									Tổng cộng: <strong><fmt:formatNumber pattern="#,##0" value="${total}"
+								/></strong>
 								</dd>
 							</dl>
 						</div>
@@ -96,10 +99,10 @@
 						<div class="card">
 
 							<div class="table-responsive-xl">
-								<input required size="50" type="text" class="form-control"
-									placeholder="Số điện thoại" name="phoneNumber"> <br>
-								<input required size="50" type="text" class="form-control"
-									placeholder="Địa chỉ nhận hàng" name="address">
+								Số điện thoại(*)<input required size="50" type="text" class="form-control"
+									placeholder="Nhập số điện thoại" name="phoneNumber"> <br>
+								Địa chỉ nhận hàng(*)<input required size="50" type="text" class="form-control"
+									placeholder="Nhập địa chỉ nhận hàng" name="address">
 							</div>
 							<!-- table.responsive-md.// -->
 

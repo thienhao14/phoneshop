@@ -14,7 +14,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-11 py-3">
-						<a class="text-body" href="./home.html">
+						<a class="text-body" href="/admin">
 							<h3>PhoneShop : Admin</h3>
 						</a>
 					</div>
@@ -83,7 +83,7 @@
 							type="text" class="form-control" id="add-user-email" name="email"
 							value="${user.email}">
 					</div>
-					<div class="mb-3">
+					<div hidden class="mb-3">
 						<label for="add-user-password" class="form-label">Password</label>
 						<input type="text" class="form-control" id="add-user-password"
 							name="password" value="${user.password}">
@@ -91,7 +91,7 @@
 					<div class="mb-3">
 						<label for="add-user-activeFlag" class="form-label">Trạng
 							thái</label> <input type="text" class="form-control"
-							id="add-user-activeFlag" name="activeFlag">
+							id="add-user-activeFlag" name="activeFlag" value="1">
 					</div>
 
 

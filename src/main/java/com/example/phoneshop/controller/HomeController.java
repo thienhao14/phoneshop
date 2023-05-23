@@ -101,7 +101,8 @@ public class HomeController {
 		product.setUpdateDate(currentDate);
 
 		productService.save(product);
-
+		List<Product> products = productService.get();
+		model.addAttribute("products", products);
 		return "admin/admin-productManagement";
 	}
 
@@ -149,8 +150,9 @@ public class HomeController {
 	}
 
 //	Thực hiện add user mới
-	@GetMapping("/admin/add-user")
+	@PostMapping("/admin/admin-add-user")
 	public String adminAddUser(User user, Model model) {
+		System.out.print("123");
 		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 		user.setId(user.getId());
 		user.setName(user.getUsername());
@@ -161,7 +163,8 @@ public class HomeController {
 		userService.save(user);
 		List<User> users = userService.get();
 		model.addAttribute("users", users);
-		return "admin-userManagement";
+	
+		return "admin/admin-userManagement";
 	}
 
 //	Chuyển qua trang chỉnh sửa user theo id

@@ -13,7 +13,7 @@
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="images/signin-image.jpg" alt="sing up image">
+							<img src="https://www.pngfind.com/pngs/m/89-893676_computer-icons-user-laptop-personal-computer-computer-girl.png" alt="sing up image">
 						</figure>
 						<a href="#" class="signup-image-link">Create an account</a>
 					</div>

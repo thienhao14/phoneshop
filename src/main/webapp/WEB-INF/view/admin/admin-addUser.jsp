@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-11 py-3">
-            <a class="text-body" href="./home.html">
+            <a class="text-body" href="/admin">
               <h3>PhoneShop : Admin</h3>
             </a>
           </div> <!-- col.// -->
@@ -61,7 +61,7 @@
   <section class="section-content">
     <div class="container">
       <header class="section-heading py-4 d-flex justify-content-between">
-        <h3 class="section-title">Thêm sản phẩm</h3>
+        <h3 class="section-title">Thêm người dùng</h3>
       </header> <!-- section-heading.// -->
       <main class="add-book-form mb-5">
         <form action="/admin/admin-add-user" th:object="${user}" method="post" class="w-50">

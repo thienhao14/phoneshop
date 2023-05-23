@@ -57,4 +57,14 @@ public class ProductDAOImpl implements ProductDAO {
 		return list;
 	}
 
+	@Override
+	public List<Product> getRelevantProduct() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Product");
+		query.setMaxResults(4);
+		@SuppressWarnings("unchecked")
+		List<Product> list = query.list();
+		return list;
+	}
+
 }

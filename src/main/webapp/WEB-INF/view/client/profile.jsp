@@ -24,8 +24,8 @@
 
 				<aside class="col-md-3 mb-md-0 mb-3">
 					<nav class="list-group">
-						<a class="list-group-item active" href="#"> Tài khoản </a> <a
-							class="list-group-item" href="#"> Đăng xuất </a>
+						<a class="list-group-item active" href="profile"> Tài khoản </a> <a
+							class="list-group-item" href="logout"> Đăng xuất </a>
 					</nav>
 				</aside>
 				<!-- col.// -->
@@ -34,19 +34,10 @@
 					<article class="card">
 						<div class="card-body">
 							<div>
-								<h5>Nguyễn Thị A</h5>
-								<p>nguyenthia@gmail.com</p>
+								<h5>Tên người dùng: ${sessionLogin.username}</h5>
+								<p>Email: ${sessionLogin.email}</p>
 							</div>
-							<hr>
-							<div>
-								<p class="bi bi-phone d-block lh-lg">
-									Số điện thoại: 0123456789
-								</p>
-								<p class="bi bi-map d-block lh-lg">
-									Địa chỉ: <br> Đường 16, Linh Trung, Thủ Đức, HCM
-								</p>
-							</div>
-
+					
 							<!-- row .//  -->
 						</div>
 						<!-- card-body.// -->

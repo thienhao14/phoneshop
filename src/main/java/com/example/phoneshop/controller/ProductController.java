@@ -43,6 +43,8 @@ public class ProductController {
 		Brand brand = brandService.get(brandId);
  		model.addAttribute("brand", brand);
 		model.addAttribute("product", product);
+		List<Product> products = productService.getRelevantProduct();
+		model.addAttribute("products", products);
 		return "client/productDetail";
 	}
 

@@ -45,4 +45,9 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.search(productName);
 	}
 
+	@Override
+	public List<Product> getRelevantProduct() {
+		return productDAO.getRelevantProduct();
+	}
+
 }

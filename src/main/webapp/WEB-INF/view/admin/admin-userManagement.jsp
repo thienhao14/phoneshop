@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-11 py-3">
-            <a class="text-body" href="./home.html">
+            <a class="text-body" href="/admin">
               <h3>PhoneShop : Admin</h3>
             </a>
           </div> <!-- col.// -->
@@ -85,8 +85,16 @@
               <td>${user.id}</td>
               <td>${user.username}</td>
               <td>${user.email}</td>
-              <td>${user.activeFlag}</td>
-           
+              
+              <c:if test = "${user.activeFlag eq 0}">
+      			<td><button class="btn btn-danger">Đang bị khóa</button></td>
+      			</c:if>
+      			
+      			<c:if test = "${user.activeFlag eq 1}">
+         		<td><button class="btn btn-success">Đang hoạt động</button></td>
+      			</c:if>
+              
+   
               <td>${user.createDate}</td>
              
               <td class="text-center text-nowrap">

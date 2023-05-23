@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Trang chủ</title>
@@ -81,8 +82,9 @@
 					</div>
 
 					<div class="mb-4">
-						<span class="price h4">${product.price}</span> <span
-							class="ms-2 text-muted text-decoration-line-through">20.000₫</span>
+						<span class="price h4">
+						<fmt:formatNumber pattern="#,##0" value="${product.price}"/></span>
+						
 					</div>
 
 					<dl class="row mb-4">
@@ -163,54 +165,21 @@
 		<div class="container">
 			<h3 class="pb-2">Sản phẩm liên quan</h3>
 			<div class="row item-grid">
+			<c:forEach items="${products}" var="product">
 				<div class="col-lg-3 col-md-6">
 					<div class="card p-3 mb-4">
 						<a href="#" class="img-wrap text-center"> <img
-							class="img-fluid" src="img/200px.png">
+							class="img-fluid" src="${product.imgList}">
 						</a>
 						<figcaption class="info-wrap mt-2">
-							<a href="#" class="title">Tên một sản phẩm</a>
-							<div class="price mt-1 fw-bold">450.000₫</div>
+							<a href="#" class="title">${product.name}</a>
+							<div class="price mt-1 fw-bold"><fmt:formatNumber pattern="#,##0" value="${product.price}"
+								/></div>
 						</figcaption>
 					</div>
 				</div>
-				<!-- col.// -->
-				<div class="col-lg-3 col-md-6">
-					<div class="card p-3 mb-4">
-						<a href="#" class="img-wrap text-center"> <img
-							class="img-fluid" src="img/200px.png">
-						</a>
-						<figcaption class="info-wrap mt-2">
-							<a href="#" class="title">Tên một sản phẩm</a>
-							<div class="price mt-1 fw-bold">450.000₫</div>
-						</figcaption>
-					</div>
-				</div>
-				<!-- col.// -->
-				<div class="col-lg-3 col-md-6">
-					<div class="card p-3 mb-4">
-						<a href="#" class="img-wrap text-center"> <img
-							class="img-fluid" src="img/200px.png">
-						</a>
-						<figcaption class="info-wrap mt-2">
-							<a href="#" class="title">Tên một sản phẩm</a>
-							<div class="price mt-1 fw-bold">450.000₫</div>
-						</figcaption>
-					</div>
-				</div>
-				<!-- col.// -->
-				<div class="col-lg-3 col-md-6">
-					<div class="card p-3 mb-4">
-						<a href="#" class="img-wrap text-center"> <img
-							class="img-fluid" src="img/200px.png">
-						</a>
-						<figcaption class="info-wrap mt-2">
-							<a href="#" class="title">Tên một sản phẩm</a>
-							<div class="price mt-1 fw-bold">450.000₫</div>
-						</figcaption>
-					</div>
-				</div>
-				<!-- col.// -->
+			</c:forEach>
+
 			</div>
 			<!-- row.// -->
 		</div>

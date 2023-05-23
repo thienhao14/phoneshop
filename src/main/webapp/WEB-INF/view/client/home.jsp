@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="vi">
 <title>Trang chủ</title>
@@ -63,7 +64,11 @@
 							<figcaption class="info-wrap mt-2">
 								<a href="/user/product/product-detail/${product.id}"
 									class="title">${product.name}</a>
-								<div class="price mt-1 fw-bold">${product.price}</div>
+								<div class="price mt-1 fw-bold">
+								<fmt:formatNumber pattern="#,##0" value="${product.price}"
+								/>
+								
+								</div>
 							</figcaption>
 						</div>
 					</div>
