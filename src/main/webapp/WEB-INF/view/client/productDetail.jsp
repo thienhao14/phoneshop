@@ -106,7 +106,7 @@
 
 					<div>
 						<a href="/cart/${product.id}" class="btn btn-primary">Mua ngay</a>
-						<a href="#" class="btn btn-light ms-2">Thêm vào giỏ hàng</a>
+						<a href="/addToCart/${product.id}" class="btn btn-light ms-2">Thêm vào giỏ hàng</a>
 					</div>
 
 				</main>

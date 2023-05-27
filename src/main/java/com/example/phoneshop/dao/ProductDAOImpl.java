@@ -57,6 +57,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return list;
 	}
 
+//	Lay sp lien quan
 	@Override
 	public List<Product> getRelevantProduct() {
 		Session currentSession = entityManager.unwrap(Session.class);

@@ -18,7 +18,7 @@
 								src="https://cdn.pixabay.com/photo/2017/03/21/02/00/user-2160923_960_720.png"
 								alt="sing up image">
 						</figure>
-						<a href="#" class="signup-image-link">Create an account</a>
+						<a href="/user/signup" class="signup-image-link">Create an account</a>
 					</div>
 
 					<div class="signin-form">

@@ -32,7 +32,7 @@
 				</ul>
 				<c:if test="${sessionLogin != null}">
     			 	<h4> Chào: <span style="color: red; margin-right:50px">${sessionLogin.username} !</span> </h4>
-    			 	<span><a class="btn btn-primary" href="logout" role="button">Đăng
+    			 	<span><a class="btn btn-primary" href="/user/logout" role="button">Đăng
 						xuất</a> </span>
 					
 				</c:if>

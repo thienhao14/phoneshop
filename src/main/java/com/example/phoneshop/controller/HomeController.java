@@ -59,14 +59,6 @@ public class HomeController {
 	@GetMapping("/admin/product")
 	public String adminProduct(Model model) {
 		List<Product> products = productService.get();
-		System.out.print(products);
-//		for(int i = 0; i<= products.size(); i++) {
-//			int brandId = products.get(i).getBrandId();
-//			Brand brand = brandService.get(brandId);
-//			System.out.print(brand);
-//			products.get(i).setBrand(brand.getName());
-//		} 
-//		
 		model.addAttribute("products", products);
 		return "admin/admin-productManagement";
 	}
@@ -152,7 +144,6 @@ public class HomeController {
 //	Thực hiện add user mới
 	@PostMapping("/admin/admin-add-user")
 	public String adminAddUser(User user, Model model) {
-		System.out.print("123");
 		Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 		user.setId(user.getId());
 		user.setName(user.getUsername());

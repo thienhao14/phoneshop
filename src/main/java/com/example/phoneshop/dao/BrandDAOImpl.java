@@ -43,7 +43,6 @@ public class BrandDAOImpl implements BrandDAO {
 		Session currentSession = entityManager.unwrap(Session.class);
 		Brand brandObj = currentSession.get(Brand.class, id);
 		currentSession.delete(brandObj);
-		
 	}
 	
 
